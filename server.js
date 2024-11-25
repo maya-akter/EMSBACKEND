@@ -8,8 +8,8 @@ import salaryRouter from './Routes/salary_route.js';
 import leaveRouter from './Routes/leave_route.js';
 import settingRouter from './Routes/setting_route.js';
 import dashboardRouter from './Routes/dashboard_route.js';
-  import path from 'path';
-// import { fileURLToPath } from 'url';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 
 
@@ -23,15 +23,15 @@ const app = express();
 
 
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-// });
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
 
 
 
