@@ -8,8 +8,8 @@ import salaryRouter from './Routes/salary_route.js';
 import leaveRouter from './Routes/leave_route.js';
 import settingRouter from './Routes/setting_route.js';
 import dashboardRouter from './Routes/dashboard_route.js';
-import path from 'path';
-import { fileURLToPath } from 'url';
+// import path from 'path';
+// import { fileURLToPath } from 'url';
 
 
 
@@ -23,20 +23,15 @@ const app = express();
 
 
 
-// Define __dirname for ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-// app.get("/",(req,res)=>{
-//     app.use(express.static(path.resolve(__dirname,"client","build")));
-//     res.sendFile(path.resolve(__dirname,"client","build","index.html"));
-// });
-// Middleware to serve static files from a directory, e.g., client build
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
-// Route for serving index.html
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-});
+// app.use(express.static(path.join(__dirname, 'client', 'build')));
+
+
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+// });
 
 
 
